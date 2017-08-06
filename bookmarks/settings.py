@@ -25,7 +25,9 @@ SECRET_KEY = '-l*ucm-t8q4h&)y@iu&wl&kau6#@oc=u@-wccl$r&+d##qy0e&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'guansite.com'
+]
 
 
 # Application definition
@@ -38,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
+    'social.apps.django_app.default'
 ]
 
 MIDDLEWARE = [
@@ -70,6 +74,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bookmarks.wsgi.application'
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
