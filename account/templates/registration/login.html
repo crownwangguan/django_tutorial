@@ -11,6 +11,11 @@ Please try again.
 <p>Please, use the following form to log-in. If you don't have an
 account <a href="{% url "register" %}">register here</a></p>
 {% endif %}
+    <div class="social">
+        <ul>
+            <li class="facebook"><a href="{% url "social:begin" "facebook" %}">Sign in with Facebook</a></li>
+        </ul>
+    </div>
 <div class="login-form">
 <form action="{% url 'login' %}" method="post">
 {{ form.as_p }}
